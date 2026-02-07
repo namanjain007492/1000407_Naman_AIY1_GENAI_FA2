@@ -1,4 +1,4 @@
-##"AIzaSyCWqj5hZv2vWAZnNVCrzM5FyXDGVOUd5TA
+
 import streamlit as st
 import google.generativeai as genai
 import textwrap
@@ -182,4 +182,5 @@ if st.session_state.history:
     st.dataframe(pd.DataFrame(st.session_state.history), use_container_width=True)
 
 st.caption("⚠️ Educational AI tool. Always consult local agriculture officers before action.")
+
 
