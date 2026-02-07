@@ -9,10 +9,10 @@ from datetime import datetime
 # =====================================================
 # 🔑 API KEY
 # =====================================================
-API_KEY = "AIzaSyCWqj5hZv2vWAZnNVCrzM5FyXDGVOUd5TA"
+API_KEY = st.secrets.get("GEMINI_API_KEY")
 
 if not API_KEY:
-    st.error("❌ Please paste your Gemini API key.")
+    st.error("❌ Gemini API key not found. Please add it to Streamlit Secrets.")
     st.stop()
 
 genai.configure(api_key=API_KEY)
@@ -182,3 +182,4 @@ if st.session_state.history:
     st.dataframe(pd.DataFrame(st.session_state.history), use_container_width=True)
 
 st.caption("⚠️ Educational AI tool. Always consult local agriculture officers before action.")
+
